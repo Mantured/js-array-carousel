@@ -1,43 +1,50 @@
-div.carousel-container {
-  position: absolute;
-  left: 50%;
-  top: 450px;
-  transform: translate(-50%, -50%);
-  width: 60vw;
-  background-color: blue;
+#jumbotron-main {
+  height: 100vh;
+  display: flex;
+  align-items: center;
 }
 
-img {
+#my-img-main {
   width: 100%;
   height: 100%;
+  object-fit: cover;
+  position: relative;
 }
 
-.my-img {
-  display: none;
+.carousel-side {
   width: 100%;
-  height: 50vh;
+  height: 20%;
 }
 
-.my-active {
-  display: inline-block;
+#title,
+#description {
+  position: absolute;
+  right: 2rem;
+  color: whitesmoke;
 }
 
-div.carousel-container .fas {
-  font-size: xxx-large;
+#title {
+  top: 65%;
+}
+
+#description {
+  top: 80%;
+  width: 40vw;
+  text-align: right;
+}
+
+div .fas {
   position: absolute;
   background-color: gray;
-  border-radius: 50%;
   padding: 1rem;
+  border-radius: 50%;
   opacity: 0.6;
-  top: 50%;
-  transform: translateY(-50%);
+  right: 40%;
   cursor: pointer;
 }
-
-div.carousel-container .fa-arrow-right-long {
-  right: 0;
+div .fa-arrow-up-long {
+  top: 10px;
 }
-
-div.carousel-container .fa-arrow-left-long {
-  left: 0;
+div .fa-arrow-down-long {
+  bottom: 10px;
 }

@@ -18,13 +18,20 @@
 </head>
 <body>
 
-    <main>
-        <section class="container-fluid">
+    <main id="jumbotron-main">
+        <section class="container">
             <div class="row">
-                <div class="col position-relative">
-                    <div class="carousel-container">
-                        <i class="fas fa-arrow-right-long"></i>
-                        <i class="fas fa-arrow-left-long"></i>
+                <div class="col px-0 position-relative">
+                    <img class="img-fluid" id="my-img-main" alt="photo carousel">
+                    <h2 id="title"></h2>
+                    <p id="description"></p>
+                </div>
+                <div class="col-3 px-0 position-relative" id="carousel-container">
+                    <div>
+                        <i class="fas fa-arrow-up-long" id="up"></i>
+                    </div>
+                    <div>
+                        <i class="fas fa-arrow-down-long" id="down"></i>
                     </div>
                 </div>
             </div>
