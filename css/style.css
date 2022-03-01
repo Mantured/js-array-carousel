@@ -1,0 +1,43 @@
+div.carousel-container {
+  position: absolute;
+  left: 50%;
+  top: 450px;
+  transform: translate(-50%, -50%);
+  width: 60vw;
+  background-color: blue;
+}
+
+img {
+  width: 100%;
+  height: 100%;
+}
+
+.my-img {
+  display: none;
+  width: 100%;
+  height: 50vh;
+}
+
+.my-active {
+  display: inline-block;
+}
+
+div.carousel-container .fas {
+  font-size: xxx-large;
+  position: absolute;
+  background-color: gray;
+  border-radius: 50%;
+  padding: 1rem;
+  opacity: 0.6;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+}
+
+div.carousel-container .fa-arrow-right-long {
+  right: 0;
+}
+
+div.carousel-container .fa-arrow-left-long {
+  left: 0;
+}
