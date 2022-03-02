@@ -53,7 +53,9 @@ for (let i = 0; i < items.length; i++) {
     carouselContainer.appendChild(myNewImg);
 }
 
-document.getElementById('up').addEventListener(`click`, function () {
+const upBtn = document.getElementById('up');
+
+function next() {
     const imgList = document.querySelector('.carousel-side');
 
     for (let i = 0; i < imgList.length; i++) {
@@ -65,7 +67,10 @@ document.getElementById('up').addEventListener(`click`, function () {
     imgList[elementIndex].classList.add('active');
     myTitle.innerHTML = title[elementIndex];
     description.innerHTML = text[elementIndex];
-} )
+}
+
+upBtn.addEventListener(`click`, next);
+
 
 /* const carouselWrapper = document.querySelector('div.carousel-container');
 carouselWrapper.innerHTML += carouselContent ;
