@@ -6,6 +6,9 @@
 
 .my-carousel {
 	height: 50vh;
+	width: 100%;
+	text-align: right;
+	position: relative;
 }
 
 .my-carousel img {
@@ -13,33 +16,32 @@
 	height: 100%;
 }
 
-/* #my-img-main {
-	width: 100%;
-	height: 100%;
-	object-fit: cover;
+.my-carousel-imgs {
+	height: 50vh;
 	position: relative;
+	width: 100%;
 }
 
-.carousel-side {
+.my-carousel-imgs img {
+	height: calc(100% / 5);
 	width: 100%;
-	height: 20%;
+	object-fit: cover;
 }
 
 #title,
 #description {
 	position: absolute;
-	right: 2rem;
 	color: whitesmoke;
+	right: 10px;
 }
 
 #title {
-	top: 65%;
+	bottom: 20%;
 }
 
 #description {
-	top: 80%;
-	width: 40vw;
-	text-align: right;
+	bottom: 5%;
+	width: 95%;
 }
 
 div .fas {
@@ -49,6 +51,7 @@ div .fas {
 	border-radius: 50%;
 	opacity: 0.6;
 	right: 40%;
+	transform: translateX(-50%);
 	cursor: pointer;
 }
 div .fa-arrow-up-long {
@@ -56,4 +59,4 @@ div .fa-arrow-up-long {
 }
 div .fa-arrow-down-long {
 	bottom: 10px;
-} */
+}
