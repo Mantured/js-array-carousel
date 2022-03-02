@@ -22,6 +22,9 @@ const text = [
     'Et temporibus voluptatum suscipit tempore aliquid deleniti aut veniam inventore eligendi ex ad ullam,',
 ]
 
+
+
+
 // mi trasformo i miei elementi in variabili const che poi non tocco più
 
 /* const myImg = document.getElementById('my-img-main');

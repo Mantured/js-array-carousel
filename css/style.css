@@ -1,3 +1,18 @@
+.my-container {
+	height: 100vh;
+	display: flex;
+	align-items: center;
+}
+
+.my-carousel {
+	height: 50vh;
+}
+
+.my-carousel img {
+	width: 100%;
+	height: 100%;
+}
+
 /* #my-img-main {
 	width: 100%;
 	height: 100%;
