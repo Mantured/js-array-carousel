@@ -24,7 +24,7 @@ const text = [
 
 // mi trasformo i miei elementi in variabili const che poi non tocco più
 
-const myImg = document.getElementById('my-img-main');
+/* const myImg = document.getElementById('my-img-main');
 const myTitle = document.getElementById('title');
 const description = document.getElementById('description');
 const carouselContainer = document.getElementById('carousel-container');
@@ -69,7 +69,7 @@ function next() {
     description.innerHTML = text[elementIndex];
 }
 
-upBtn.addEventListener(`click`, next);
+upBtn.addEventListener(`click`, next); */
 
 
 /* const carouselWrapper = document.querySelector('div.carousel-container');
