@@ -1,4 +1,4 @@
-const items = [
+const images = [
     'img/01.jpg',
     'img/02.jpg',
     'img/03.jpg',
@@ -22,80 +22,83 @@ const text = [
     'Et temporibus voluptatum suscipit tempore aliquid deleniti aut veniam inventore eligendi ex ad ullam,',
 ]
 
+itemsContent  = '';
+thumbnailsContent  = '';
+/* let i = 0
+while (images.length != 0) {
+        itemsContent += `
+        <div class="item">
+            <img src="${images[i]}" alt="${title[i]} picture">
+            <div class="item-description px-3">
+                <h2>${title[i]}</h2>
+                <p>${text[i]}</p>
+            </div>
+        </div>`
+
+        thumbnailsContent += `
+        <div class="thumbnail">
+            <img src="${images[i]}" alt="Thumbnail of ${title[i]} picture">
+        </div>`
+    i++
+    } */
 
 
 
-// mi trasformo i miei elementi in variabili const che poi non tocco più
+for (let i = 0 ; i < images.length ; i++){
+    itemsContent += `
+    <div class="item">
+        <img src="${images[i]}" alt="${title[i]} picture">
+        <div class="item-description px-3">
+            <h2>${title[i]}</h2>
+            <p>${text[i]}</p>
+        </div>
+    </div>`
 
-/* const myImg = document.getElementById('my-img-main');
-const myTitle = document.getElementById('title');
-const description = document.getElementById('description');
-const carouselContainer = document.getElementById('carousel-container');
-
-//mi serve un indicatore che conti dove sono partendo da zero index [0]
-
-let elementIndex = 0;
-
-for (let i = 0; i < items.length; i++) {
-    if (i === 0) {
-        myImg.src = items[i];
-        myTitle.innerHTML = title[i];
-        description.innerHTML = text[i];
-    }
-    // aggiungo le immagini al file html
-    // let carouselContent  = '';
-    // aggiungo la variabile che va a crearmi img dentro il div l
-    const myNewImg = document.createElement('img');
-    //devo aggiungere le immagini del carosello lateraale
-    //adesso mynewimg assume il vaolore del iesimo item
-    myNewImg.src = items[i];
-    myNewImg.classList.add('carousel-side');
-    // condizione per non spaccare tutto che non va più avanti if
-    //mi serve la variabile container carousel
-    if (i === 0) myNewImg.classList.add('active');
-    carouselContainer.appendChild(myNewImg);
+    thumbnailsContent += `
+    <div class="thumbnail">
+        <img src="${images[i]}" alt="Thumbnail of ${title[i]} picture">
+    </div>`
 }
 
-const upBtn = document.getElementById('up');
-
-function next() {
-    const imgList = document.querySelector('.carousel-side');
-
-    for (let i = 0; i < imgList.length; i++) {
-        imgList[i].classList.remove('active');
-    }
-    //ripesco l'elementindex
-    elementIndex++; // elementindex = elementindex + 1
-    myImg.src = items[elementIndex];
-    imgList[elementIndex].classList.add('active');
-    myTitle.innerHTML = title[elementIndex];
-    description.innerHTML = text[elementIndex];
-}
-
-upBtn.addEventListener(`click`, next); */
+const itemsElement = document.querySelector('.items');
+itemsElement.innerHTML = itemsContent;
+const thumbnailsElement = document.querySelector('.thumbnails');
+thumbnailsElement.innerHTML += thumbnailsContent;
 
 
-/* const carouselWrapper = document.querySelector('div.carousel-container');
-carouselWrapper.innerHTML += carouselContent ;
-//ora ho le img non visibili nel file html all'interno di my-img
-
-//lista elementi aggiunti al container principale !attenzione la "s" è fondamentale
-const carouselElements = document.getElementsByClassName('my-img');
-console.log(carouselElements); //ottimo
-
-carouselElements[0].classList.add('my-active');
-
-// inizializzo il bottone o freccia che sia
-const nextBtn = document.querySelector('i.fa-arrow-right-long');
-const previousBtn = document.querySelector('i.fa-arrow-left-long');
 
 let activeElement = 0;
-let unActiveElement = !activeElement;
 
-// sia il caso di creare una funzione e poi un EventListner?
+function active() {
+    document.getElementsByClassName('item')[activeElement].classList.add('active');
+    document.getElementsByClassName('thumbnail')[activeElement].classList.add('active');
+}
+function unactive() {
+    document.getElementsByClassName('item')[activeElement].classList.remove('active');
+    document.getElementsByClassName('thumbnail')[activeElement].classList.remove('active');
+}
 
-nextBtn.addEventListener('click', function () {
-    carouselElements[activeElement].classList.remove('my-active');
-    activeElement++;
-    carouselElements[activeElement].classList.add('my-active');
-}); */
+active(); //ho bisogno che all'apertura della pagina siano attivi
+
+function prev() {
+    unactive();
+    if( activeElement === 0){
+        activeElement = images.length - 1;
+    } else {
+        activeElement--;
+    }
+    active();
+};
+
+function next() {
+    unactive();
+    if( activeElement === images.length - 1){
+        activeElement = 0;
+    } else {
+        activeElement++;
+    }
+    active();
+};
+
+document.querySelector('#down').addEventListener('click', next);
+document.querySelector('#up').addEventListener('click', prev);
